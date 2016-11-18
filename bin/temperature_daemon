@@ -12,7 +12,6 @@ dname = os.path.dirname(abspath)
 
 
 def get_temperature():
-
     sensor = W1ThermSensor()
     temp_f = sensor.get_temperature(W1ThermSensor.DEGREES_F)
 
