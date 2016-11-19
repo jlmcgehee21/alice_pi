@@ -6,6 +6,7 @@ from w1thermsensor import W1ThermSensor
 import os
 import time
 import utils
+import argparse
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
@@ -47,4 +48,4 @@ def main(sleep_time):
         time.sleep(sleep_time)
 
 if __name__ == "__main__":
-   main(60)
+    main(60)
