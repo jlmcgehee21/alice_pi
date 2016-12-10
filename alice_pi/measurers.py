@@ -2,10 +2,10 @@
 A Measurer's responsibility is to interact with the sensor
 hardware and take a measurement, then return that measurement
 """
-import platform
+import os
 from w1thermsensor import W1ThermSensor
 
-if 'Darwin' not in platform.system():
+if os.environ.get('PLATFORM', 'dev') == 'prod':
     import RPi.GPIO as GPIO
 
 
@@ -31,4 +31,3 @@ class MotionMeasurer(object):
         GPIO.setup(11, GPIO.IN)  # Read output from PIR motion sensor
 
         return bool(GPIO.input(11))
-
