@@ -2,7 +2,12 @@
 A Measurer's responsibility is to interact with the sensor
 hardware and take a measurement, then return that measurement
 """
+import platform
 from w1thermsensor import W1ThermSensor
+
+if 'Darwin' not in platform.system():
+    import RPi.GPIO as GPIO
+
 
 class TemperatureMeasurer(object):
     unit_dict = {'F': W1ThermSensor.DEGREES_F,
@@ -18,5 +23,12 @@ class TemperatureMeasurer(object):
 
         return round(temp, self.n_decimals)
 
+
 class MotionMeasurer(object):
-    pass
+    def measure():
+        GPIO.setwarnings(False)
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(11, GPIO.IN)  # Read output from PIR motion sensor
+
+        return bool(GPIO.input(11))
+

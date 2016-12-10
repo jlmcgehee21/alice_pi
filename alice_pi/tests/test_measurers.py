@@ -2,7 +2,7 @@ import unittest2 as unittest
 import mock
 from alice_pi import measurers
 import random
-from w1thermsensor import W1ThermSensor
+
 
 class TestTemperatureMeasurer(unittest.TestCase):
 
@@ -23,4 +23,3 @@ class TestTemperatureMeasurer(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
