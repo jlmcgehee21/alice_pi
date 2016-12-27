@@ -1,4 +1,5 @@
 requests
 nose
 unittest2
-mock==2.0.0
+mock
+pyyaml
