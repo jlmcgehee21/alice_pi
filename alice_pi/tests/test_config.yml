@@ -1,0 +1,19 @@
+test_ha_temp:
+  measurer: TemperatureMeasurer
+  senders:
+    - RestSender:
+        base_url: 'http://base_url'
+
+test_rest_motion:
+  measurer: MotionMeasurer
+  senders:
+    - RestSender:
+        base_url: 'http://google.com'
+        method: 'get'
+        measurement_name: 'motion'
+        extra_params: {'room': 'living_room'}
+    - RestSender:
+        base_url: 'http://test.com'
+        method: 'post'
+        measurement_name: 'movement'
+        extra_params: {'other': 'param'}
