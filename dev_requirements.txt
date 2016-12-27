@@ -3,6 +3,5 @@ nose
 unittest2
 mock
 pyyaml
-requests
 rpi.gpio
 w1thermsensor
