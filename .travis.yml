@@ -1,7 +1,12 @@
 language: python
 python:
-  - "3.5"
-# command to install dependencies
-install: "pip install -r dev_requirements.txt"
-# command to run tests
+- '3.5'
+install: pip install -r dev_requirements.txt
 script: nosetests
+deploy:
+  provider: pypi
+  user: jlmcgehee21
+  on:
+    tags: true
+  password:
+    secure: c+avSL8CeVI0kRG2RZwvOGfJEDOYFAe0RRFnVsh0yUpwTXb5inAd52OuglpjiMUAmmbg00u5UKk+UNIH37b91KeQJ//U/5bHY6lYspmgTZS55JUXKyHm9bO3DCTEMuEAzHRBd00qcotKylKpG34FaqfZF0NLKZEhvLfHUo69SKXJNt/7preOFfsR595s41WojavFEB1rh6Nla0Tp9M4aaT2qomm5H70nk+WamF59Gc66/YXX3HnVLqa0y0wWKXFM/9IpDmn3CkuWAmRi/zb7B0bINXBP9uDJNx8Br1uHixzbiFQfTaEWP8qKdKOnJUiq9vS/670WrgtyenOVKUAynHoqUvpwx4pa+QgIO55tkQNBCygdNNoRJkbIfrEC4NEC0GGNTh55suRnMGTC3yvA47qz+jAotv/av79HgnEk1dY/FkPOc5g6sSCajQinxEAGBD/Emj6TBFmPrTrQPe70CU25DDNxXt+KeuHzlmKLHzvcUmWgCFHtBiiBADd5wKStSFdZdUzDpOPwNqUHLp7+gE6+ACW6VhTvEs6ZQJaQ5wu6995M0Ov9uWxALDqJp5QijpDO7u5ChKjLw49sMUkRBjQkWISDOwoEu+Dnugxv2pU8x9aOXfDz8Petm48OyFqKHLv+YZNLWAnGE8XUC+F0HMHdWIDHTWVY4H2BoYwsXQc=
