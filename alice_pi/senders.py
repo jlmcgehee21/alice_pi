@@ -22,6 +22,10 @@ class RestSender(Sender):
         self.base_url = base_url
         self.method = send_callables[method]
         self.headers = headers
+
+        if self.headers is None:
+            self.headers = {}
+
         self.measurement_name = measurement_name
         self.extra_params = extra_params
 
@@ -34,17 +38,24 @@ class RestSender(Sender):
 
     def send(self, measurement):
         meas_dict = {self.measurement_name: measurement}
+
         if self.extra_params is not None:
             meas_dict.update(self.extra_params)
 
-        self.method(**meas_dict)
 
-    def get(self, **params):
-        response = requests.get(self.base_url, params=params)
+        self.method(meas_dict, self.headers)
+
+    def get(self, params, headers):
+        response = requests.get(self.base_url,
+                                params=params,
+                                headers=headers)
+
         self.__handle_response(response)
 
-    def post(self, **params):
-        response = requests.post(self.base_url, json=params)
+    def post(self, params, headers):
+        response = requests.post(self.base_url,
+                                 json=params,
+                                 headers=headers)
         self.__handle_response(response)
 
 classes = inspect.getmembers(sys.modules[__name__],

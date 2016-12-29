@@ -10,7 +10,7 @@ class TestRestSender(unittest.TestCase):
         sender = senders.RestSender('http://blah')
 
         with self.assertRaises(senders.DataNotSentException):
-            sender.get(test='a', test2='b')
+            sender.get(dict(test='a', test2='b'), {})
 
     @mock.patch('requests.post',
                 return_value=mock.MagicMock(status_code=404))
@@ -18,7 +18,7 @@ class TestRestSender(unittest.TestCase):
         sender = senders.RestSender('http://blah')
 
         with self.assertRaises(senders.DataNotSentException):
-            sender.post(test='a', test2='b')
+            sender.post(dict(test='a', test2='b'), {})
 
     @mock.patch('requests.get',
                 return_value=mock.MagicMock(status_code=200))

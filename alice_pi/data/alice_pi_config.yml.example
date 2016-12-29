@@ -1,10 +1,10 @@
-test_ha_temp:
+example_rest_temp:
   measurer: TemperatureMeasurer
   senders:
     - RestSender:
         base_url: 'http://base_url'
 
-test_rest_motion:
+example_rest_motion:
   measurer: MotionMeasurer
   senders:
     - RestSender:
