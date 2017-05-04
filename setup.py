@@ -11,10 +11,6 @@ from codecs import open
 import os
 
 
-# Get the long description from the README file
-with open('README.md', encoding='utf-8') as f:
-    long_description = f.read()
-
 setup(
     name='alice_pi',
 
@@ -25,7 +21,9 @@ setup(
 
     description=('A package for running various home-automation' +
                  'services on raspberry pi.'),
-    long_description=long_description,
+    long_description=('This package is designed to run many sensor monitoring' +
+                      ' and data pushing events asynchronously.  It is' +
+                      ' inspired by and made to integrate with Home Assistant'),
 
     # The project's main homepage.
     url='https://github.com/jlmcgehee21/alice_pi',
