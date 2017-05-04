@@ -86,7 +86,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
-            'alice_pi = alice_pi.bin.alice_pi.__main__:main',
+            'alice_pi = alice_pi.bin.run_alice.__main__:main',
         ],
     },
 )

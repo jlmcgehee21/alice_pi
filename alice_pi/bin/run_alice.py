@@ -3,7 +3,6 @@
 from w1thermsensor import W1ThermSensor
 import os
 import time
-import utils
 import argparse
 from alice_pi import configurers
 from alice_pi import managers
@@ -12,7 +11,7 @@ abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 
 CONFIG_PATHS = [os.curdir, os.path.expanduser('~'),
-                os.environ.get('ALICE_PI_CONFIG_DIR')]
+                os.environ.get('ALICE_PI_CONFIG_DIR', '')]
 
 def load_config():
     conf = configurers.Configurer()
