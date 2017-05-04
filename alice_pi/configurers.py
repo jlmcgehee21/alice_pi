@@ -10,14 +10,22 @@ class Configurer(object):
 
         measurers = []
         for meas_group in config_dict.values():
-            measurer = meas_group['measurer']
+            measurer = meas_group['measurer'][0]
+            measurer_name = next(iter(measurer))
+            measurer_params = measurer.get(measurer_name)
 
-            measurer = MEASURERS[measurer]()
+            if measurer_params is None:
+                measurer_params = {}
+
+            measurer = MEASURERS[measurer_name](**measurer_params)
 
             senders = []
             for sender in meas_group['senders']:
                 sender_name = next(iter(sender))
                 sender_params = sender.get(sender_name)
+
+                if sender_params is None:
+                    sender_params = {}
 
                 sender_obj = SENDERS[sender_name](**sender_params)
                 senders.append(sender_obj)

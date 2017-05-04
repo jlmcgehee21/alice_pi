@@ -1,11 +1,14 @@
 test_ha_temp:
-  measurer: TemperatureMeasurer
+  measurer:
+    - TemperatureMeasurer:
+        n_decimals: 3
   senders:
     - RestSender:
         base_url: 'http://base_url'
 
 test_rest_motion:
-  measurer: MotionMeasurer
+  measurer:
+    - MotionMeasurer:
   senders:
     - RestSender:
         base_url: 'http://google.com'
