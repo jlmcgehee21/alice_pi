@@ -17,7 +17,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.5',
+    version='0.0.6',
 
     description=('A package for running various home-automation' +
                  'services on raspberry pi.'),
@@ -77,7 +77,7 @@ setup(
     # http://docs.python.org/3.4/distutils/setupscript.html#installing-additional-files # noqa
     # In this case, 'data_file' will be installed into '<sys.prefix>/my_data'
     data_files=[(os.path.expanduser('~'),
-                ['data/alice_pi_config.yml.example'])],
+                ['alice_pi/data/alice_pi_config.yml.example'])],
 
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
