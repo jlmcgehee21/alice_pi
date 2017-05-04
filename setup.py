@@ -17,7 +17,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.6',
+    version='0.0.7',
 
     description=('A package for running various home-automation' +
                  'services on raspberry pi.'),
@@ -53,7 +53,7 @@ setup(
 
     install_requires=['pyyaml',
                       'requests',
-                      'rpi.gpio',
+                      # 'rpi.gpio',
                       'w1thermsensor'],
 
     # List additional groups of dependencies here (e.g. development
@@ -78,6 +78,8 @@ setup(
     # In this case, 'data_file' will be installed into '<sys.prefix>/my_data'
     data_files=[(os.path.expanduser('~'),
                 ['alice_pi/data/alice_pi_config.yml.example'])],
+
+    include_package_data=True,
 
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow

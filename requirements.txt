@@ -1,4 +1,3 @@
 PyYAML
 requests
-rpi.gpio
 w1thermsensor
