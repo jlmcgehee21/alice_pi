@@ -17,7 +17,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.9',
+    version='0.0.10',
 
     description=('A package for running various home-automation' +
                  'services on raspberry pi.'),
@@ -53,7 +53,7 @@ setup(
 
     install_requires=['pyyaml',
                       'requests',
-                      # 'rpi.gpio',
+                      'rpi.gpio',
                       'w1thermsensor'],
 
     # List additional groups of dependencies here (e.g. development
@@ -86,7 +86,7 @@ setup(
     # pip to create the appropriate form of executable for the target platform.
     entry_points={
         'console_scripts': [
-            'alice_pi = alice_pi.bin.run_alice.__main__:main',
+            'alice_pi = alice_pi.bin.run_alice:main',
         ],
     },
 )
