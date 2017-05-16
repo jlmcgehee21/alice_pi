@@ -1,0 +1,11 @@
+[Unit]
+Description=Start alice_pi and keep it alive
+
+[Service]
+Restart=on-failure
+ExecStart=/path_to_virtualenv/bin/alice_pi
+RemainAfterExit=yes
+PIDFile=/var/run/alice_pi.pid
+
+[Install]
+WantedBy=multi-user.target
