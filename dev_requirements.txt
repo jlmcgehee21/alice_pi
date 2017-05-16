@@ -4,4 +4,3 @@ unittest2
 mock
 pyyaml
 nose-watch
-w1thermsensor
